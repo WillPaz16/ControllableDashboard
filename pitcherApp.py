@@ -442,5 +442,6 @@ def update_table(handed_filter):
 # ------------------------
 # Run server
 # ------------------------
-if __name__ == '__main__':
-    app.run(debug=True, port=8051)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8050))  # Use Heroku PORT if available
+    app.run_server(host="0.0.0.0", port=port, debug=False)
